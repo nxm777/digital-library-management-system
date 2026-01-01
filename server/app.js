@@ -6,5 +6,6 @@ app.use(express.json());
 app.use('/auth', authRoutes);
 app.use('/api/books', require('./routes/bookRoutes'));
 app.use('/api/reading-lists', require('./routes/readingListRoutes'));
+app.use("/api/reading-sessions", require('./routes/readingSessionRoutes'));
 
 module.exports = app;
