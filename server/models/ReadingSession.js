@@ -36,4 +36,6 @@ const readingSessionSchema = new mongoose.Schema({
   versionKey: false
 });
 
+readingSessionSchema.index({ ownerId: 1, sessionDate: -1 });
+
 module.exports = mongoose.model('ReadingSession', readingSessionSchema);
