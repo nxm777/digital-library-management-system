@@ -14,6 +14,8 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import ReadingLists from './components/ReadingLists';
 import ListDetails from './pages/ListDetails';
 
+import ReadingSessions from './pages/ReadingSessions';
+
 function App() {
   return (
     <Router>
@@ -48,6 +50,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/lists" element={<ReadingLists />} />
           <Route path="/lists/:id" element={<ListDetails />} />
+          <Route path="/sessions" element={<ReadingSessions />} />
 
         </Route>
 
