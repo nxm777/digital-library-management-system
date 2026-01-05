@@ -15,6 +15,7 @@ import ReadingLists from './components/ReadingLists';
 import ListDetails from './pages/ListDetails';
 
 import ReadingSessions from './pages/ReadingSessions';
+import Statistics from './pages/Statistics';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <Route path="/lists" element={<ReadingLists />} />
           <Route path="/lists/:id" element={<ListDetails />} />
           <Route path="/sessions" element={<ReadingSessions />} />
+          <Route path="/statistics" element={<Statistics />} />
 
         </Route>
 
