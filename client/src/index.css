@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+.react-calendar-heatmap text {
+  font-size: 10px;
+  fill: #9ca3af;
+}
+
+.react-calendar-heatmap .react-calendar-heatmap-weekday-labels text {
+  font-size: 9px;
+}
+
+.react-calendar-heatmap .color-empty { fill: #ebedf0; }
+.react-calendar-heatmap .color-scale-1 { fill: #d6e9c6; }
+.react-calendar-heatmap .color-scale-2 { fill: #97c95c; }
+.react-calendar-heatmap .color-scale-3 { fill: #48992b; }
+.react-calendar-heatmap .color-scale-4 { fill: #1d5f14; }
+
+.react-calendar-heatmap rect:hover {
+  stroke: #555;
+  stroke-width: 1px;
+}
