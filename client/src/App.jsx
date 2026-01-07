@@ -17,6 +17,8 @@ import ListDetails from './pages/ListDetails';
 import ReadingSessions from './pages/ReadingSessions';
 import Statistics from './pages/Statistics';
 
+import Reviews from './pages/Reviews';
+
 function App() {
   return (
     <Router>
@@ -53,6 +55,7 @@ function App() {
           <Route path="/lists/:id" element={<ListDetails />} />
           <Route path="/sessions" element={<ReadingSessions />} />
           <Route path="/statistics" element={<Statistics />} />
+          <Route path="/reviews" element={<Reviews />} />
 
         </Route>
 
