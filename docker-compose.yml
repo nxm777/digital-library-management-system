@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  server:
+    build: ./server
+    container_name: mern-backend
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    environment:
+      - PORT=4000
+
+      - MONGODB_URI=mongodb://mongo:27017/digital-library-management-system
+    depends_on:
+      - mongo
+    
+  client:
+    build: ./client
+    container_name: mern-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    environment:
+
+      - VITE_API_TARGET=http://server:4000
+
+  mongo:
+    image: mongo:latest
+    container_name: mern-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
