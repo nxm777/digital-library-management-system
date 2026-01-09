@@ -1,5 +1,6 @@
 const ReadingSession = require('../models/ReadingSession');
 const Book = require('../models/Book');
+const Challenge = require('../models/Challenge');
 const { handleInvalidObjectId } = require('../utils/handleErrors');
 const { isOwner } = require('../utils/permissions');
 
@@ -24,6 +25,8 @@ exports.createReadingSession = async (req, res) => {
       sessionDate: sessionDate || Date.now(),
       notes
     });
+
+    await Challenge.updateProgress(req.user.id, newSession);
 
     return res.status(201).json({
       success: true,
@@ -182,6 +185,7 @@ exports.updateReadingSession = async (req, res) => {
 
     await readingSession.save();
     await readingSession.populate('book', 'title author');
+
 
     return res.status(200).json({
       success: true,
