@@ -19,6 +19,8 @@ import Statistics from './pages/Statistics';
 
 import Reviews from './pages/Reviews';
 
+import Challenges from './pages/Challenges';
+
 function App() {
   return (
     <Router>
@@ -56,6 +58,7 @@ function App() {
           <Route path="/sessions" element={<ReadingSessions />} />
           <Route path="/statistics" element={<Statistics />} />
           <Route path="/reviews" element={<Reviews />} />
+          <Route path="/challenges" element={<Challenges />} /> 
 
         </Route>
 
