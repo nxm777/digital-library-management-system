@@ -10,5 +10,6 @@ app.use("/api/reading-sessions", require('./routes/readingSessionRoutes'));
 app.use('/api/statistics', require('./routes/statisticsRoutes'));
 app.use("/api/reviews", require('./routes/reviewRoutes.js'));
 app.use('/api/challenges', require('./routes/challengeRoutes'));
+app.use('/api/users', require('./routes/userRoutes'));
 
 module.exports = app;

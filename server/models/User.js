@@ -47,10 +47,6 @@ const userSchema = new mongoose.Schema({
         default: "user",
         required: true
     },
-    profilePicture: { 
-        type: String, 
-        default: ""
-    }
 }, {versionKey: false,
     timestamps: true,
     toJSON: {
