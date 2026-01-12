@@ -21,6 +21,8 @@ import Reviews from './pages/Reviews';
 
 import Challenges from './pages/Challenges';
 
+import UserProfile from './pages/UserProfile';
+
 function App() {
   return (
     <Router>
@@ -58,7 +60,8 @@ function App() {
           <Route path="/sessions" element={<ReadingSessions />} />
           <Route path="/statistics" element={<Statistics />} />
           <Route path="/reviews" element={<Reviews />} />
-          <Route path="/challenges" element={<Challenges />} /> 
+          <Route path="/challenges" element={<Challenges />} />
+          <Route path="/profile" element={<UserProfile />} />
 
         </Route>
 
