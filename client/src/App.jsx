@@ -10,6 +10,8 @@ import Dashboard from './pages/Dashboard';
 
 import PublicRoute from './components/auth/PublicRoute';
 import ProtectedRoute from './components/auth/ProtectedRoute';
+import AdminRoute from './components/auth/AdminRoute';
+
 
 import ReadingLists from './components/ReadingLists';
 import ListDetails from './pages/ListDetails';
@@ -23,6 +25,12 @@ import Challenges from './pages/Challenges';
 
 import UserProfile from './pages/UserProfile';
 
+import AdminDashboard from './pages/AdminDashboard';
+import AdminBooks from './pages/AdminBooks';
+import AdminReviews from './pages/AdminReviews';
+import AdminUsers from './pages/AdminUsers';
+
+
 function App() {
   return (
     <Router>
@@ -31,7 +39,8 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         
-        <Route path="/login" 
+        <Route 
+          path="/login" 
           element={
             <PublicRoute>
               <Login />
@@ -39,7 +48,8 @@ function App() {
           } 
         />
         
-        <Route path="/register" 
+        <Route 
+          path="/register" 
           element={
             <PublicRoute>
               <Register />
@@ -55,14 +65,53 @@ function App() {
           }
         >
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<UserProfile />} />
           <Route path="/lists" element={<ReadingLists />} />
           <Route path="/lists/:id" element={<ListDetails />} />
           <Route path="/sessions" element={<ReadingSessions />} />
-          <Route path="/statistics" element={<Statistics />} />
           <Route path="/reviews" element={<Reviews />} />
-          <Route path="/challenges" element={<Challenges />} />
-          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/challenges" element={<Challenges />} />          
+          <Route path="/statistics" element={<Statistics />} />
 
+<Route path="/admin">
+  
+  <Route 
+    index 
+    element={
+      <AdminRoute>
+        <AdminDashboard />
+      </AdminRoute>
+    } 
+  />
+
+  <Route 
+    path="books" 
+    element={
+      <AdminRoute>
+        <AdminBooks />
+      </AdminRoute>
+    } 
+  />
+
+  <Route 
+    path="reviews" 
+    element={
+      <AdminRoute>
+        <AdminReviews />
+      </AdminRoute>
+    } 
+  />
+
+  <Route 
+    path="users" 
+    element={
+      <AdminRoute>
+        <AdminUsers />
+      </AdminRoute>
+    } 
+  />
+
+  </Route>
         </Route>
 
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
