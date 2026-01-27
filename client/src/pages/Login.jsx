@@ -16,7 +16,7 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post('/api/auth/login', data);
+      const response = await axios.post('auth/login', data);
       const { token, user } = response.data;
 
       localStorage.setItem('token', token);
